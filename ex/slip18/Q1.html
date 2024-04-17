@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    function generateFibonacci() {
+      var count = parseInt(prompt("Enter the number of Fibonacci numbers to generate:"));
+      var series = [0, 1];
+
+      for (var i = 2; i < count; i++) {
+        series[i] = series[i - 1] + series[i - 2];
+      }
+
+      alert("Fibonacci Numbers: " + series.join(", "));
+    }
+  </script>
+</head>
+<body>
+
+  <button onclick="generateFibonacci()">Generate Fibonacci Numbers</button>
+
+</body>
+</html>

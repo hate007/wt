@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    Enter Employee Name:<input type="text" name="ename" id="employee-name">
+    <button id="submit-btn">Get Details</button>
+
+    <div id="details"></div>
+
+    <script>
+        $(document).ready(function(){
+            // Handle button click
+            $('#submit-btn').click(function(){
+                var ename = $('#employee-name').val();
+                if (ename === '') {
+                    alert('Please enter an employee name.');
+                    return;
+                }
+                // Get employee details
+                $.ajax({
+                    url: 'Q1.php',
+                    method: 'POST',
+                    data: { ename: ename },
+                    success: function(response) {
+                        $('#details').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

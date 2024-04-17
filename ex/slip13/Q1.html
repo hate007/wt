@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>AJAX Program</title>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <label for="name">Enteryourname:</label>
+        <input type="text" id="name" name="name">
+        <div id="response"></div>
+        <script>
+        $(document).ready(function(){
+            $("#name").on("input",function(){
+                var name=$(this).val();
+                $.ajax({
+                    url:'Q1.php',
+                    type:'POST',
+                    data:{name:name},
+                    success:function(response){
+                        $('#response').html(response);
+                    }
+                });
+            });
+        })
+        </script>
+    </body>
+</html>

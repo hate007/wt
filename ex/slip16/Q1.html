@@ -1,0 +1,38 @@
+<!DOCTYPEhtml>
+ <html>
+    <head>
+        <title>BookDetails</title>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("select").change(function(){
+                    var book=$(this).val();
+                    $.ajax({
+                        url:"book.xml",
+                        dataType:"xml",
+                        success:function(xml){
+                            $(xml).find('book').each(function(){
+                                var title=$(this).find('title').text();
+                                if(title==book){
+                                    var author = $(this).find('author').text();
+                                    var year=$(this).find('year').text();
+                                    var price=$(this).find('price').text();
+                                    $("#details").html("Author:"+author+"<br>Year:"+year+"<br>Price:"+price);
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <select>
+            <option>Python</option>
+            <option>JavaScript</option>
+            <option>React.js</option>
+            <option>PHP</option>
+        </select>
+        <div id="details"></div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function loadData() {
+                var xmlhttp=false;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                } else {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                //var key = document.getElementById("key").value;
+                var value = document.getElementById("value").value;
+                // Open Connection
+                xmlhttp.open("GET","Q1.php?value="+value,true);
+                // send request
+                xmlhttp.send(null);
+                xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                        document.getElementById("content").innerHTML=xmlhttp.responseText;
+                    }
+                } 
+            }// end function
+        </script>
+    </head>
+    <body>
+        <form id="myform">
+            File Name :<input type="text" name="value" id="value" />  
+            <input type="button" value="Submit" onclick="loadData();" />
+        </form>
+        <div id="content"></div>
+    </body>
+</html>

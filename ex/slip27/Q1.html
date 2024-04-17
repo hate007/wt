@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoterDetails</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h2>VoterDetails</h2>
+
+    <form id="voterForm">
+        Name:<input type="text" id="name" name="name" required><br><br>
+        Age:<input type="number" id="age" name="age" required><br><br>
+        Nationality:<input type="text" id="nationality" name="nationality" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <div id="response"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('#voterForm').submit(function(event){
+                event.preventDefault();
+                var name = $('#name').val().toUpperCase();
+                var age = $('#age').val();
+                var nationality = $('#nationality').val();
+                $.ajax({
+                    url: 'Q1.php',
+                    method: 'POST',
+                    data: {name: name, age: age, nationality: nationality},
+                    success: function(response){
+                        $('#response').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

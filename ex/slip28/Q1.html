@@ -1,0 +1,38 @@
+<!DOCTYPEhtml>
+ <html>
+    <head>
+    <title>Login</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#login-form").submit(function(event){
+                event.preventDefault();
+                var username=$("#username").val();
+                var password=$("#password").val();
+                $.ajax({
+                    url:"Q1.php",
+                    type:"post",
+                    data:{username:username,password:password},
+                    success:function(response){
+                        if(response=="valid"){
+                            alert("Login successful");
+                            //redirect to dashboard
+                        }else {
+                            alert("Invalid username or password");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form id="login-form" method="post">
+            Username:<input type="text" name="username" id="username"><br><br>
+            Password:<input type="password" name="password" id="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
+
