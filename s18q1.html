@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Fibonacci Sequence</title>
+</head>
+<body>
+
+<button onclick="printFibonacci()">Print Fibonacci Numbers</button>
+<p id="fibonacciSequence"></p>
+<script>
+function printFibonacci() {
+    var n = parseInt(prompt("Enter the number of Fibonacci numbers to generate:"));
+    var fibonacciSequence = calculateFibonacci(n);
+    document.getElementById("fibonacciSequence").innerHTML = "Fibonacci Sequence: " + fibonacciSequence.join(', ');
+}
+
+function calculateFibonacci(n) {
+    var fibonacci = [0,1];
+    for (var i = 2; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    return fibonacci.slice(0, n);
+}
+</script>
+</body>
+</html>

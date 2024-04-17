@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Example</title>
+	<script>
+		function sendRequest() {
+			var name = document.getElementById("name").value;
+			var message = document.getElementById("message");
+			if (name == "") {
+				message.innerHTML = "Stranger, please tell me your name!";
+			} else {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						if (this.responseText == "Hello, master !") {
+							message.innerHTML = "Hello, master !";
+						} else {
+							message.innerHTML = name + ", I don't know you!";
+						}
+					}
+				};
+				xhr.open("GET", "s13q1a.php?name=" + name, true);
+				xhr.send();
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>AJAX Example</h1>
+	<input type="text" id="name" onkeyup="sendRequest()">
+	<p id="message"></p>
+</body>
+</html>
+

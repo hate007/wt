@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Text Before and After Paragraph</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#before").click(function(){
+                $("p").before("<br><i>Before Paragraph: </i>");
+            });
+            $("#after").click(function(){
+                $("p").after("<br><i>After Paragraph.</i>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Insert Text Before and After Paragraph using jQuery</h2>
+    <button id="before">Insert Before</button>
+    <button id="after">Insert After</button>
+    <p>This is a some paragraph. Heyyyy I'm a paragraaahphhhhhh ://</p>
+</body>
+</html>

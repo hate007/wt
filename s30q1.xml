@@ -1,0 +1,47 @@
+<Bookstore>
+    <Category>
+        <Name>Yoga</Name>
+        <Books>
+            <Book>
+                <Book_Title>A</Book_Title>
+                <Book_Author>Br</Book_Author>
+                <Book_Price>299</Book_Price>
+            </Book>
+            <Book>
+                <Book_Title>Lioga</Book_Title>
+                <Book_Author>B</Book_Author>
+                <Book_Price>200</Book_Price>
+            </Book>
+        </Books>
+    </Category>
+    <Category>
+        <Name>Story</Name>
+        <Books>
+            <Book>
+                <Book_Title>The Alchemist</Book_Title>
+                <Book_Author>Paulo Coelho</Book_Author>
+                <Book_Price>100</Book_Price>
+            </Book>
+            <Book>
+                <Book_Title>Harry Potter</Book_Title>
+                <Book_Author>J.K. Rowling</Book_Author>
+                <Book_Price>199</Book_Price>
+            </Book>
+        </Books>
+    </Category>
+    <Category>
+        <Name>Technical</Name>
+        <Books>
+            <Book>
+                <Book_Title>Clean</Book_Title>
+                <Book_Author>Robe</Book_Author>
+                <Book_Price>300</Book_Price>
+            </Book>
+            <Book>
+                <Book_Title>Design</Book_Title>
+                <Book_Author>Erich</Book_Author>
+                <Book_Price>50</Book_Price>
+            </Book>
+        </Books>
+    </Category>
+</Bookstore>

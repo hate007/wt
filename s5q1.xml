@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <item-name>Shirt</item-name>
+        <item-rate>2099</item-rate>
+        <item-quantity>120</item-quantity>
+    </item>
+    <item>
+        <item-name>Jeans</item-name>
+        <item-rate>1999</item-rate>
+        <item-quantity>83</item-quantity>
+    </item>
+    <item>
+        <item-name>Shoes</item-name>
+        <item-rate>3999</item-rate>
+        <item-quantity>43</item-quantity>
+    </item>
+    <item>
+        <item-name>Watch</item-name>
+        <item-rate>9999</item-rate>
+        <item-quantity>3</item-quantity>
+    </item>
+    <item>
+        <item-name>Backpack</item-name>
+        <item-rate>999</item-rate>
+        <item-quantity>600</item-quantity>
+    </item>
+</items>

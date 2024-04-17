@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Name</title>
+	<script>
+		function changeStyle() {
+			var name = document.getElementById("name");
+			if (name.value != "") {
+				name.style.color = "red";
+				name.style.fontSize = "18px";
+			} else {
+				var image = document.getElementById("image");
+				image.style.display = "block";
+			}
+		}
+
+		function changeSize() {
+			var image = document.getElementById("image");
+			image.style.width = "200px";
+			image.style.height = "200px";
+		}
+
+		function resetSize() {
+			var image = document.getElementById("image");
+			image.style.width = "100px";
+			image.style.height = "100px";
+		}
+	</script>
+</head>
+<body>
+	<h1>Student Name</h1>
+	<input type="text" id="name" onblur="changeStyle()">
+	<br><br>
+	<img id="image" src="demo.png" onclick="changeSize()" onmouseup="resetSize()" onmouseover="changeSize()" onmouseout="resetSize()" style="display:none;">
+</body>
+</html>
